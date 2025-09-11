@@ -15,7 +15,7 @@ html{
         }
         
         #box1{
-            background-color:#2F424C}
+            background-color:#0D2533}
 
         #box2{
             background-color: #55778B}
@@ -48,7 +48,7 @@ html{
             font-weight: 400;
             font-style: normal;
             font-size: 32px;
-            color: #2F424C
+            color: #0D2533
         }
 
         /* Link Style */
@@ -60,7 +60,7 @@ html{
 
         a:hover {
             text-decoration: underline;
-            color: #2F424C;
+            color: #0D2533;
         }
 
         a:visited {
