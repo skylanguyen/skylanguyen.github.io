@@ -1,0 +1,86 @@
+
+
+html{
+            font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #F2CADC;
+        }
+
+
+        /* Makes the colored boxes*/
+        .color-box{
+            height: 100px;
+            width: 100px;
+        }
+        
+        #box1{
+            background-color:#2F424C}
+
+        #box2{
+            background-color: #55778B}
+
+        #box3{
+            background-color: #F2CADC}
+
+        #box4{
+            background-color: #FFFCDF}
+
+        #box5{
+            background-color: #3E6541}
+
+     /* font size and styles */
+        p{
+            font-size: 16px;
+        }
+
+        .small-text{
+            font-size: 12px;}
+
+        h3{
+            font-size: 20px;}
+
+        h2{
+            font-size: 24px;}
+
+        h1{
+            font-family: "gelato-luxe", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 32px;
+            color: #2F424C
+        }
+
+        /* Link Style */
+
+         a {
+            text-decoration: none;
+            color:#55778B;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #2F424C;
+        }
+
+        a:visited {
+            color: #3E6541;
+        }
+
+        /*Button Customization */
+       .button-box{
+            height: 25px;
+            width: 125px;
+            font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color:#FFFCDF;
+            color:#2F424C
+       }
+
+       .button-box:hover{
+        background-color: #3E6541;
+        color:white
+       }
+
+
