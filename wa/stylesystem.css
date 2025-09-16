@@ -4,7 +4,7 @@ html{
             font-family: "futura-pt", sans-serif;
             font-weight: 400;
             font-style: normal;
-            background-color: #F2CADC;
+            background-color: #C9D9DE;
         }
 
 
@@ -15,19 +15,19 @@ html{
         }
         
         #box1{
-            background-color:#0D2533}
+            background-color:#0D485C}
 
         #box2{
-            background-color: #55778B}
+            background-color: #C9D9DE}
 
         #box3{
-            background-color: #F2CADC}
+            background-color: #ECDAF6}
 
         #box4{
             background-color: #FFFCDF}
 
         #box5{
-            background-color: #3E6541}
+            background-color: #304F34}
 
      /* font size and styles */
         p{
@@ -48,29 +48,29 @@ html{
             font-weight: 400;
             font-style: normal;
             font-size: 32px;
-            color: #0D2533
+            color: #0D485C
         }
 
         /* Link Style */
 
          a {
             text-decoration: none;
-            color:#55778B;
+            color:#0D485C;
         }
 
         a:hover {
             text-decoration: underline;
-            color: #0D2533;
+            color: #304F34;
         }
 
         a:visited {
-            color: #3E6541;
+            color: #304F34;
         }
 
         /*Button Customization */
        .button-box{
-            height: 30px;
-            width: 100px;
+            height: 25px;
+            width: 125px;
             line-height:30px;
             display: inline-block;
             text-align: center;
@@ -79,12 +79,12 @@ html{
             font-weight: 400;
             font-style: normal;
             background-color:#FFFCDF;
-            color:#0D2533;
+            color:#0D485C;
        }
 
        .button-box:hover{
-        background-color: #3E6541;
-        color:white
+        background-color: #ECDAF6;
+        color:black
        }
 
 
