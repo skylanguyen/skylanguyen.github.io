@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-header{
+            display:flex;
+            justify-content: center;
+            gap: 0rem;
+            align-items: center;
+            flex-direction: column;
+            font-family: Helvetica, sans-serif;
+        }
+
+        .card-content{
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 2rem;
+            border: 2px black solid;
+            text-align: center;
+            
+        }
+        button{
+            height: 3rem;
+            width: 5rem;
+            border-radius: 50%;
+            border: 2px black solid;
+            background-color: #FFFCDF;
+            text-align: center;
+            justify-content: center;
+        }
+
+        button:hover,
+        button:focus{
+            background-color: #ECDAF6;
+        }
+
+        h3{
+            text-align: center;
+            font-size: 3rem; 
+        };
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="card">
+    <div class="card-header">
+        <h3>Community Garden Project</h3>
+        <button class="expand-btn" aria-label="Expand card">+</button>
+    </div>
+    <div class="card-content">
+        <p class="summary">Join neighbors in creating a shared growing space...</p>
+    <div class="details hidden">
+      <p>Meeting every Saturday at 10am. Tools provided. All skill levels welcome.</p>
+      <p>Contact: garden@community.org</p>
+    </div>
+    </div>
+</div>
+
+
+    <script>
+
+        const expandBtn = document.querySelector('.expand-btn');
+        const details = document.querySelector('.card-content');
+
+        expandBtn.addEventListener('click', showInfo);
+        let info = false;
+
+    
+
+        function showInfo(){
+            //console.log("hi");
+            //alert("this is an alert")
+            if (info== false){
+                details.style.display = "flex";
+                expandBtn.textContent = "-"
+                expandBtn.setAttribute('aria-label', 'Hide card')
+                info = true;
+            }
+            else {
+                details.style.display = "none";
+                expandBtn.textContent = "+"
+                expandBtn.setAttribute('aria-label', 'Expand card')
+                info = false;
+            }
+        }
+
+    </script>
+</body>
+</html>
