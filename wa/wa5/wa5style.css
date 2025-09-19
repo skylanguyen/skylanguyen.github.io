@@ -1,3 +1,10 @@
+html{
+    font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+}
+
+
 .main-nav{
     display: flex;
     justify-content: space-between;
@@ -106,10 +113,7 @@
     text-decoration: underline dotted;
     color:#0D485C;
     padding:0.25rem;
-    font-family: "futura-pt", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size:1rem;
+    
     }
 
  a:hover,a:focus-visible {
