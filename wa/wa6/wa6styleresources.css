@@ -1,0 +1,244 @@
+html{
+    font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+}
+
+.page-container{
+    display:grid;
+    grid-template-areas:
+    "nav nav"
+    "hongkong riichi"
+    "slides slides";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+    padding: 1rem;
+}
+.main-nav{
+    grid-area: nav;
+    display: grid;
+    grid-template-areas:
+        "brand" 
+        "menu";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    background-color: #C9D9DE;
+    justify-items: center;
+    align-items: center;
+    padding:0.5rem 1rem;
+    align-items:center;
+    gap: 1rem;
+    
+}
+
+.nav-menu{
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    font-family: "futura-pt", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #C9D9DE;
+            font-size:1rem;
+    justify-content: center;
+    align-content: center;
+    justify-self:center;
+    align-self: center;
+    margin:0rem;
+    border: 10px;
+}
+
+
+.nav-toggle{
+    grid-area: toggle;
+    display:none;
+}
+
+@media screen and (max-width: 768px){
+    .page-container{
+        grid-template-areas: "nav" "hongkong" "riichi" "slides";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    .main-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        flex-direction:row;
+    }
+
+    .nav-toggle{
+        display:flex;
+        justify-content: center;
+        flex-direction:column;
+        align-self:center;
+        background-color:#FFFCDF;
+        width: 3rem;
+        height: 3rem;
+        padding-left:0.5rem
+    }
+
+    .nav-menu{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible{
+        background-color:#ECDAF6;
+    }
+
+    .hamburger{
+        background-color: black;
+        height: 0.25rem;
+        width: 1.25rem;
+        padding: 0;
+        margin: 0.25rem;
+     
+    }
+
+    .nav-menu.show{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        top: 6rem;
+        right:1.5rem;
+        width:4rem;
+        gap:1rem;
+        
+
+        background-color:#ECDAF6;
+        padding: 1rem;
+    }
+
+    .nav-menu.hide{
+    display:none;
+}
+
+.nav-toggle.open{
+    transform:rotate(90deg);
+
+}
+
+.hongkong,.riichi,.slides{
+    padding:1rem;
+    border: 1rem;
+}
+
+.hongkong-cheatsheet img{
+    width:40%;
+    height:auto;
+    border-radius:1rem;
+    padding:0rem;
+}
+
+}
+
+
+.nav-brand{
+    grid-area: brand;
+    font-family: "gelato-luxe", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            color: #0D485C;
+            margin: 0rem;
+    text-align: center;
+}
+
+ a {
+    text-decoration: underline dotted;
+    color:#0D485C;
+    padding:0.25rem;
+    
+    }
+
+ a:hover,a:focus-visible {
+    text-decoration: underline;
+    color: #304F34;
+    }
+
+a:visited {
+    color: #304F34;
+    }
+
+.nav-menu li{
+    list-style: none;
+}
+
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color:#304F34E6;
+    justify-content:center;
+    align-items: center;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox-img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px black;
+    opacity:100%;
+}
+
+.close-btn{
+    position: absolute;
+    top:1rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    color:white;
+    cursor:pointer;
+}
+
+.hongkong{
+    grid-area:hongkong;
+    background-color: #FFFCDF;
+    min-height:100%;
+    padding:1rem;
+}
+
+.hongkong ul{
+    padding-left:1rem;
+}
+
+.hongkong-cheatsheet{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hongkong-cheatsheet img{
+    width:40%;
+    height:auto;
+    border-radius:1rem;
+    padding:0rem;
+}
+
+.riichi{
+    grid-area: riichi;
+    background-color: #ECDAF6;
+    min-height:100%;
+}
+
+.slides{
+    grid-area: slides;
+    background-color:#304F34;
+    color:white;
+}
+
