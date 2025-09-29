@@ -15,6 +15,8 @@ html{
     gap: 2rem;
     padding: 1rem;
 }
+
+/* nav bar */
 .main-nav{
     grid-area: nav;
     display: grid;
@@ -90,6 +92,10 @@ a:visited {
     list-style: none;
 }
 
+/*end of nav bar*/
+
+/*lightbox (interactive element)*/
+
 .lightbox{
     display: none;
     position: fixed;
@@ -116,6 +122,13 @@ a:visited {
     opacity:100%;
 }
 
+.lightbox-hint{
+    color:white;
+    text-align:center;
+    font-size:1rem;
+    margin-top:10px;
+}
+
 .close-btn{
     position: absolute;
     top:1rem;
@@ -124,7 +137,10 @@ a:visited {
     color:white;
     cursor:pointer;
 }
+/* end of ightbox (interactive element)*/
 
+
+/* start of section styles */
 .hongkong{
     grid-area:hongkong;
     background-color: #FFFCDF;
@@ -161,9 +177,6 @@ a:visited {
     padding:1rem;
 }
 
-
-
-
 .slides{
     grid-area: slides;
     background-color:#304F34;
@@ -193,6 +206,8 @@ a:visited {
     border:none;
 }
 
+/* start of section styles */
+
 footer{
     padding:5rem;
     justify-content:center;
@@ -200,13 +215,9 @@ footer{
     text-align:center;
 }
 
-.lightbox-hint{
-    color:white;
-    text-align:center;
-    font-size:1rem;
-    margin-top:10px;
-}
 
+
+/*features for smaller screens */
 @media screen and (max-width: 768px){
     .page-container{
         grid-template-areas: "nav" "hongkong" "riichi" "slides";
