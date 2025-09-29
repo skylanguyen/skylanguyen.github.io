@@ -121,6 +121,9 @@ html{
 
 }
 
+.lightbox-hint{
+    display:none;
+}
 
 
 }
@@ -241,4 +244,11 @@ footer{
     justify-content:center;
     align-content:center;
     text-align:center;
+}
+
+.lightbox-hint{
+    color:white;
+    text-align:center;
+    font-size:1rem;
+    margin-top:10px;
 }

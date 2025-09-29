@@ -56,11 +56,164 @@ html{
     display:none;
 }
 
+
+
+
+.nav-brand{
+    grid-area: brand;
+    font-family: "gelato-luxe", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+            color: #0D485C;
+            margin: 0rem;
+    text-align: center;
+}
+
+ a {
+    text-decoration: underline dotted;
+    color:#0D485C;
+    padding:0.25rem;
+    
+    }
+
+ a:hover,a:focus-visible {
+    text-decoration: underline;
+    color: #304F34;
+    }
+
+a:visited {
+    color: #304F34;
+    }
+
+.nav-menu li{
+    list-style: none;
+}
+
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color:#304F34E6;
+    justify-content:center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox-img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px black;
+    opacity:100%;
+}
+
+.close-btn{
+    position: absolute;
+    top:1rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    color:white;
+    cursor:pointer;
+}
+
+.hongkong{
+    grid-area:hongkong;
+    background-color: #FFFCDF;
+    min-height:100%;
+    padding:1rem;
+    
+}
+
+.hongkong ul,
+.riichi ul{
+    padding-left:1rem;
+}
+
+.hongkong-cheatsheet,
+.riichi-cheatsheet{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hongkong-cheatsheet img,
+.riichi-cheatsheet img{
+    width:40%;
+    height:auto;
+    border-radius:1rem;
+    padding:0rem;
+}
+
+.riichi{
+    grid-area: riichi;
+    background-color: #ECDAF6;
+    min-height:100%;
+    padding:1rem;
+}
+
+
+
+
+.slides{
+    grid-area: slides;
+    background-color:#304F34;
+    color:white;
+    min-height:100%;
+    padding-left:1rem;
+    padding-right:0;
+    padding-bottom:2rem;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:0rem;
+    margin-top:2rem;
+}
+
+.slides-title{
+    align-self: flex-start;
+}
+
+.slides iframe{
+    width:100%;
+    max-width: 50rem;
+    height:28rem;
+    display:block;
+    border:none;
+}
+
+footer{
+    padding:5rem;
+    justify-content:center;
+    align-content:center;
+    text-align:center;
+}
+
+.lightbox-hint{
+    color:white;
+    text-align:center;
+    font-size:1rem;
+    margin-top:10px;
+}
+
 @media screen and (max-width: 768px){
     .page-container{
         grid-template-areas: "nav" "hongkong" "riichi" "slides";
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
+        gap:2rem;
+        width:100%;
     }
     
     .main-nav{
@@ -126,119 +279,56 @@ html{
 }
 
 .hongkong,.riichi,.slides{
-    padding:1rem;
-    border: 1rem;
+    padding:1.5rem 1rem;
+    margin: 0 1rem 2rem;
+    border-bottom: 1rem solid white;
+    border-top:1rem solid white;
 }
+
+
+
 
 .hongkong-cheatsheet img{
     width:40%;
     height:auto;
     border-radius:1rem;
     padding:0rem;
-}
-
-}
-
-
-.nav-brand{
-    grid-area: brand;
-    font-family: "gelato-luxe", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 2rem;
-            color: #0D485C;
-            margin: 0rem;
-    text-align: center;
-}
-
- a {
-    text-decoration: underline dotted;
-    color:#0D485C;
-    padding:0.25rem;
-    
-    }
-
- a:hover,a:focus-visible {
-    text-decoration: underline;
-    color: #304F34;
-    }
-
-a:visited {
-    color: #304F34;
-    }
-
-.nav-menu li{
-    list-style: none;
-}
-
-.lightbox{
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background-color:#304F34E6;
-    justify-content:center;
-    align-items: center;
-}
-
-.lightbox.active{
-    display:flex;
-}
-
-.lightbox-img{
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px black;
-    opacity:100%;
-}
-
-.close-btn{
-    position: absolute;
-    top:1rem;
-    right: 1.5rem;
-    font-size: 3rem;
-    color:white;
-    cursor:pointer;
-}
-
-.hongkong{
-    grid-area:hongkong;
-    background-color: #FFFCDF;
-    min-height:100%;
-    padding:1rem;
-}
-
-.hongkong ul{
-    padding-left:1rem;
-}
-
-.hongkong-cheatsheet{
-    display:flex;
-    gap:1rem;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.hongkong-cheatsheet img{
-    width:40%;
-    height:auto;
-    border-radius:1rem;
-    padding:0rem;
-}
-
-.riichi{
-    grid-area: riichi;
-    background-color: #ECDAF6;
-    min-height:100%;
 }
 
 .slides{
     grid-area: slides;
     background-color:#304F34;
     color:white;
+
+    
+    padding:1.5rem 1rem;
+    padding-bottom:2rem;
+    border-top:1rem solid white;
+    border-bottom:1rem solid white;
+
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:0 1rem 2rem;
+    
 }
 
+.slides-title{
+    align-self: flex-start;
+    padding-left:1rem;
+}
+
+.slides iframe{
+    display:flex;
+    max-width: 25rem;
+    height:20rem;
+}
+
+.lightbox-hint{
+    display:none;
+}
+
+}
+/* end of media query*/
