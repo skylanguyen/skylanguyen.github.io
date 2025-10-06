@@ -151,7 +151,7 @@ const store = {
 const banner = document.getElementById('consent');
 const consent = localStorage.getItem('consent');
 
-if(!consent) banner.style.display = 'block';
+if(!consent && banner){ banner.style.display = 'block';}
 
 document.getElementById('accept')?.addEventListener('click', () => {
     localStorage.setItem('consent', '1');
@@ -177,7 +177,7 @@ document.getElementById('clear')?.addEventListener('click',() => {
         store.clear();
         localStorage.removeItem('consent');
         alert('Data cleared');
-        banner.style.display='block';
+        if(banner) banner.style.display='block';
     }
 });
 

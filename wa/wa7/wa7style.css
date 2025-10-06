@@ -1,3 +1,53 @@
+ /* Homepage-specific layout */
+.main-content {
+    grid-area: main;
+    background-color: #FFFCDF;
+    padding: 1rem;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ECDAF6;
+    padding: 1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.5rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.gallery-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-header h2 {
+    margin: 0;
+    padding-right: 0.5rem;
+}
+
+/* Update page-container for homepage layout */
+@media screen and (min-width: 769px) {
+    .page-container:not(:has(.hongkong)) {
+        grid-template-areas: "nav nav" "main sidebar" "privacy privacy";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+}
+ 
+ 
  .nav-menu {
        font-size: clamp(1rem, 2vw, 2rem);
    }
