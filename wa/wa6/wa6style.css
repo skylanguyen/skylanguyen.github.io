@@ -6,7 +6,7 @@ html{
 
 .page-container{
     display:grid;
-    grid-template-areas:"nav nav" "main sidebar";
+    grid-template-areas:"nav nav" "main sidebar" "privacy sidebar";
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
     gap: 2rem;

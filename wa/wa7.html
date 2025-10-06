@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lxq7nkm.css">
+    <link rel="stylesheet" href="wa6/wa6style.css">
+    <link rel="stylesheet" href="wa7/wa7style.css">
+<!--<script src="wa5/wa5java.js" defer></script>
+    <script src="wa6/wa6java.js" defer></script>-->
+    <script src ="wa7/wa7java.js" defer></script>
+</head>
+<body>
+<div class="page-container"> <!-- Using a grid layout-->
+    <!-- This is for the nav bar/menu, same as week 5 -->
+    <nav class="main-nav">
+        <div class="nav-brand">Mahjong Club - Home</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav-menu hide">
+            <li><a href="wa7.html">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="wa7/wa7resources.html">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content"> <!-- Large rectangle for introduction-->
+        <h1>Welcome to the Mahjong Club!</h1>
+       
+        <p>We are the CU Mahjong club gather just to play our favorite game! We are always looking for new members to teach and play with. Our meeting times and locations can alternate, so check out the calendar to learn about the details of our specific meetings!</p>
+        <p><strong>Where:</strong> CASE Building (check calendar for specific room)</p>
+        <p><strong>When:</strong> Mondays and Thursdays around 5:00 PM (check calendar for specific times)</p>
+        <p></p>
+    </main>
+
+    <aside class="sidebar"> <!--Sidebar for a gallery-->
+        <div class="gallery-header">
+            <h2>Gallery</h2>
+            <p>(click on an image to enlarge)</p>
+        <div class="gallery-grid">
+            <img src="wa6/Mahjong.JPG" alt="Picture of Mahjong Sets" class="gallery-thumb">
+            <img src="wa6/Mahjong1.JPG" alt="Picture of Mahjong Wall" class="gallery-thumb">
+            <img src="wa6/Mahjong2.JPG" alt="Picture of center Mahjong pile" class="gallery-thumb">
+            <img src="wa6/Mahjong3.JPG" alt="Picture of Mahjong tile shuffle" class="gallery-thumb">
+        </div>
+        </div>
+        
+    </aside>
+
+    <div id="lightbox" class="lightbox"> <!--Makes the pictures expand when you press on them.-->
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-img" src="../wa6/transparent.png" alt="Enlarged Image">
+        <p class="lightbox-hint"> - Use arrow keys and escape to navigate -</p>
+    </div>
+<section class = "privacy">
+        <h3>Privacy and Data Collection</h3>
+        <p>We collect your theme preference (light/dark mode) to remember your site customization. This data improves your experience by remembering your preferences between visits, making it convenient. Data is stored locally using localStorage. It expires 20 days of inactivity. This data is not shared to external servers. You can decline this collection and use the "Clear Data" at any time to remove all stored information.</p>
+    </section>
+    
+</div>
+    
+<div id = "consent">
+    <p>We use local storage to save your preferences and customizations. This makes it convenient every time you return to this site. You can opt out of this data collection below. Data expires after 20 days.</p>
+    <button id = "accept">Accept</button>
+    <button id = "decline"> Decline</button>
+</div>
+
+<button id="theme" class="button-box" type="button" aria-label="Change between light and dark mode">Light/Dark Mode</button>
+<button id = "clear" class="button-box">Clear Data</button>
+
+<footer>Skyla Nguyen - 2025</footer>
+
+
+
+</body>
+</html>

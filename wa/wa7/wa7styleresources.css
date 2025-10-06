@@ -1,0 +1,686 @@
+html {
+    font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.page-container {
+    display: grid;
+    grid-template-areas:
+        "nav nav"
+        "hongkong riichi"
+        "slides slides"
+        "privacy privacy";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.main-nav, .hongkong, .riichi, .slides{
+    container-type: inline-size;
+}
+
+/* nav bar */
+.main-nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-areas:
+        "brand"
+        "menu";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    background-color: #C9D9DE;
+    justify-items: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.nav-menu {
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #C9D9DE;
+    font-size: clamp(1rem, 2vw,2rem);
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+    margin: 0rem;
+}
+
+
+.nav-toggle {
+    grid-area: toggle;
+    display: none;
+}
+
+body{
+    font-size: clamp(1rem, 1rem, 1rem);
+}
+
+
+.nav-brand {
+    grid-area: brand;
+    font-family: "gelato-luxe", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: #0D485C;
+    margin: 0rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: underline dotted;
+    color: #0D485C;
+    padding: 0.25rem;
+
+}
+
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
+    color: #304F34;
+}
+
+a:visited {
+    color: #304F34;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+/*end of nav bar*/
+
+/*lightbox (interactive element)*/
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #304F34E6;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px black;
+    opacity: 100%;
+}
+
+.lightbox-hint {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* end of ightbox (interactive element)*/
+
+
+/* start of section styles */
+.hongkong {
+    grid-area: hongkong;
+    background-color: #FFFCDF;
+    min-height: 100%;
+    padding: 1rem;
+    max-width: 100%;
+    
+
+}
+
+.hongkong ul,
+.riichi ul {
+    padding-left: 1rem;
+}
+
+.hongkong-cheatsheet,
+.riichi-cheatsheet {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hongkong-cheatsheet img,
+.riichi-cheatsheet img {
+    flex: 1 1 40%;
+    max-width: 40%;
+    height: auto;
+    border-radius: 1rem;
+    padding: 0rem;
+}
+
+.riichi {
+    grid-area: riichi;
+    background-color: #ECDAF6;
+    min-height: 100%;
+    padding: 1rem;
+    
+    
+}
+
+.slides {
+    grid-area: slides;
+    background-color: #304F34;
+    color: white;
+    min-height: 100%;
+    padding-left: 1rem;
+    padding-right: 0;
+    padding-bottom: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom:1rem;
+}
+
+.slides-title {
+    align-self: flex-start;
+}
+
+.slides iframe {
+    width: 100%;
+    max-width: 50rem;
+    height: 28rem;
+    display: block;
+    border: none;
+}
+
+/* start of section styles */
+
+footer {
+    padding: 5rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+
+/*features for smaller screens */
+@media screen and (min-width:601px) and (max-width: 768px) {
+    p{
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .page-container {
+        grid-template-areas: "nav" "hongkong" "riichi" "slides" "privacy";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        flex-direction: row;
+    }
+
+    .nav-toggle {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        background-color: #FFFCDF;
+        width: 3rem;
+        height: 3rem;
+        padding-left: 0.5rem
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+        background-color: #ECDAF6;
+    }
+
+    .hamburger {
+        background-color: black;
+        height: 0.25rem;
+        width: 1.25rem;
+        padding: 0;
+        margin: 0.25rem;
+
+    }
+
+    .nav-menu.show {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        top: 6rem;
+        right: 1.5rem;
+        width: clamp(4rem, 20vw, 8rem);
+        gap: 1rem;
+
+
+        background-color: #ECDAF6;
+        padding: 1rem;
+    }
+
+    .nav-menu.hide {
+        display: none;
+    }
+
+    .nav-toggle.open {
+        transform: rotate(90deg);
+
+    }
+
+    .hongkong,
+    .riichi,
+    .slides {
+        padding: 1.5rem 1rem;
+        margin: 1rem 1rem 1rem;
+        
+
+    }
+
+    .privacy{
+        margin: 0 auto;
+        width:100%;
+        box-sizing: border-box;
+    }
+
+
+
+    .hongkong-cheatsheet img {
+        width: 40%;
+        height: auto;
+        border-radius: 1rem;
+        padding: 0rem;
+    }
+
+    .slides {
+        grid-area: slides;
+        background-color: #304F34;
+        color: white;
+
+
+        padding: 1.5rem 1rem;
+        padding-bottom: 2rem;
+       
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .slides-title {
+        align-self: flex-start;
+        padding-left: 1rem;
+    }
+
+    .slides iframe {
+        display: flex;
+        max-width: 25rem;
+        height: 20rem;
+    }
+
+    .lightbox-hint {
+        display: none;
+    }
+
+}
+
+/* end of media query*/
+
+.light {
+    background-color: white;
+}
+
+.dark {
+    background-color: #304F34;
+}
+
+.dark footer {
+    color: white;
+}
+
+/*Button Customization */
+.button-box {
+    height: 2rem;
+    width: 10rem;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #0D485C;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFFCDF;
+    color: #0D485C;
+    text-align: center;
+    padding: 0;
+    margin-left: 1rem
+}
+
+.button-box:hover {
+    background-color: #ECDAF6;
+    color: black
+}
+
+
+/*_________________*/
+
+
+/*Button Customization */
+.button-box {
+    height: 2rem;
+    width: 10rem;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #0D485C;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFFCDF;
+    color: #0D485C;
+    text-align: center;
+    padding: 0;
+    margin-left: 1rem
+}
+
+.button-box:hover {
+    background-color: #ECDAF6;
+    color: black
+}
+
+@media screen and (max-width: 600px){
+    p{
+        font-size:clamp(0.9rem, 3vw, 1.2rem);
+    }
+    .page-container {
+        grid-template-areas: "nav" "hongkong" "riichi" "slides" "privacy";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        flex-direction: row;
+    }
+
+    .nav-toggle {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        background-color: #FFFCDF;
+        width: 3rem;
+        height: 3rem;
+        padding-left: 0.5rem
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+        background-color: #ECDAF6;
+    }
+
+    .hamburger {
+        background-color: black;
+        height: 0.25rem;
+        width: 1.25rem;
+        padding: 0;
+        margin: 0.25rem;
+
+    }
+
+    .nav-menu.show {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        top: 6rem;
+        right: 1.5rem;
+        width: 4rem;
+        gap: 1rem;
+
+
+        background-color: #ECDAF6;
+        padding: 1rem;
+    }
+
+    .nav-menu.hide {
+        display: none;
+    }
+
+    .nav-toggle.open {
+        transform: rotate(90deg);
+
+    }
+
+    .hongkong,
+    .riichi,
+    .slides, .privacy {
+        padding: 1.5rem 1rem;
+        margin: 1rem 1rem 1rem;
+        width: clamp(8rem, 80vw, 100rem)
+
+    }
+
+    .privacy{
+        margin: 0 auto;
+        width: 94vw;
+    
+    }
+
+
+    .hongkong-cheatsheet img, .riichi-cheatsheet img{
+        flex: 1 1 100%;
+        max-width: 100%
+    }
+
+
+
+    .hongkong-cheatsheet img {
+        width: 40%;
+        height: auto;
+        border-radius: 1rem;
+        padding: 0rem;
+    }
+
+    .slides {
+        grid-area: slides;
+        background-color: #304F34;
+        color: white;
+
+
+        padding: 1.5rem 1rem;
+        padding-bottom: 2rem;
+       
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .slides-title {
+        align-self: flex-start;
+        padding-left: 1rem;
+    }
+
+    .slides iframe {
+        display: flex;
+        max-width: 25rem;
+        height: 20rem;
+    }
+
+    .lightbox-hint {
+        display: none;
+    }
+
+}
+
+@container (min-width: 600px){
+    .main-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .nav-menu{
+        flex-direction: row;
+    }
+}
+
+@container (min-width: 400px){
+    .hongkong-cheatsheet img,
+    .riichi-cheatsheet img{
+        flex: 1 1 40%;
+        max-width: 40%;
+    }
+}
+
+@container(max-width: 600px){
+    .slides iframe{
+        max-width: 25rem;
+        height: 20rem;
+    }
+}
+
+
+#clear{
+    margin-left: 1rem;
+}
+
+@media(max-width: 600px){
+    #consent button{
+        display: block;
+        width: 90%;
+        margin: 0.5rem auto;
+    }
+}
+
+#consent{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background: #304F34;
+    padding: 1rem;
+    text-align:center;
+    z-index: 20000;
+    color:#FFFCDF;
+}
+
+#consent p{
+    margin:0.5rem 0;
+}
+
+#accept{
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    background: #FFFCDF;
+    border: none;
+    cursor: pointer;
+    font-family: "futura-pt", sans-serif;
+    border-radius:4px;
+}
+
+#decline{
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    background: transparent;
+    color:#FFFCDF;
+    border: 2px solid #FFFCDF;
+    cursor: pointer;
+    font-family: "futura-pt", sans-serif;
+    border-radius:4px;
+}
+
+#accept:hover{
+    background: #ECDAF6
+}
+
+#decline:hover{
+    background:white;
+}
+
+@media(max-width : 600px){
+    #consent button{
+        display: block;
+        width: 90%;
+        margin: 0.5rem auto;
+    }
+
+    .privacy{
+        width:clamp(8rem, 80vw, 100rem);
+    }
+
+}
+
+.privacy{
+    grid-area: privacy;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    color:white;
+
+}
+
+body.light .privacy{
+    color: black;
+}
+
+body.dark .privacy{
+    color: white;
+}
