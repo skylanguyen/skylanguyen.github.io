@@ -63,32 +63,20 @@
 }
 
 @media(max-width : 600px){
-    #consent button{
-        display: block;
-        width: 90%;
-        margin: 0.5rem auto;
-    }
-
-}
 
 .privacy{
     background:#C9D9DE;
     padding:1rem;
+    box-sizing: border-box;
    
 
+}
 }
 
 #clear{
     margin-left: 1rem;
 }
 
-@media(max-width: 600px){
-    #consent button{
-        display: block;
-        width: 90%;
-        margin: 0.5rem auto;
-    }
-}
 
 #consent{
     display: none;
@@ -149,17 +137,17 @@
 
 }
 
-/*.privacy{
-    grid-area: privacy;
-    background:#C9D9DE;
-    padding: 1.5rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
-
-} */
     @media screen and (min-width:601px) and (max-width: 768px) {
         .privacy{
             width:100%;
         }
 
+    }
+
+    @media screen and (min-width: 769px){
+        .privacy{
+            grid-area: privacy;
+            grid-column: 1/2;
+            width: auto;
+        }
     }
