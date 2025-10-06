@@ -158,3 +158,10 @@
     align-content: center;
     text-align: center;
 }
+
+.lightbox-hint{
+    color:white;
+    text-align:center;
+    font-size:1rem;
+    margin-top:10px;
+}
