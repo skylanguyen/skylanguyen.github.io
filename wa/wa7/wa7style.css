@@ -151,3 +151,10 @@
             width: auto;
         }
     }
+
+    footer {
+    padding: 5rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
