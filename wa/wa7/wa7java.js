@@ -93,10 +93,12 @@ document.addEventListener('keydown',(event) => {
             closeLightbox();
             break;
     }
-
+});
 
 let touchStartX = 0;
 let touchEndX = 0;
+
+const galleryImage = document.querySelector(".gallery-modal img");
 
 function processSwipe(){
     if( touchEndX < touchStartX -50){
@@ -116,7 +118,6 @@ lightbox.addEventListener('touchstart', e =>{
 lightbox.addEventListener('touchend', e =>{
     touchEndX = e.changedTouches[0].screenX;
     processSwipe();
-});
 });
 });
 
