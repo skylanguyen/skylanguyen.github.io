@@ -1,4 +1,8 @@
  /* Homepage-specific layout */
+body{
+    font-display:optional;
+}
+
 .main-content {
     grid-area: main;
     background-color: #FFFCDF;

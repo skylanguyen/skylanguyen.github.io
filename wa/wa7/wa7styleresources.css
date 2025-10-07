@@ -4,6 +4,10 @@ html {
     font-style: normal;
 }
 
+body{
+    font-display:optional;
+}
+
 .page-container {
     display: grid;
     grid-template-areas:
