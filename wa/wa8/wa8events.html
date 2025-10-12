@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CU Mahjong - Homepage</title>
     <link rel="stylesheet" href="https://use.typekit.net/lxq7nkm.css">
-    <link rel="stylesheet" href="wa6/wa6style.css">
-    <link rel="stylesheet" href="wa7/wa7style.css">
+    <link rel="stylesheet" href="../wa6/wa6style.css">
+    <link rel="stylesheet" href="../wa7/wa7style.css">
+    <link rel="stylesheet" href="wa8events.css">
     <!--<script src="wa5/wa5java.js" defer></script>
     <script src="wa6/wa6java.js" defer></script>-->
-    <script src="wa7/wa7java.js" defer></script>
+    <script src="../wa7/wa7java.js" defer></script>
 </head>
 
 <body>
     <div class="page-container"> <!-- Using a grid layout-->
         <!-- This is for the nav bar/menu, same as week 5 -->
         <nav class="main-nav">
-            <div class="nav-brand">Mahjong Club - Home</div>
+            <div class="nav-brand">Mahjong Club - Events</div>
             <button class="nav-toggle" aria-label="Toggle navigation menu">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -25,37 +26,40 @@
             </button>
 
             <ul class="nav-menu hide">
-                <li><a href="wa7.html">Home</a></li>
-                <li><a href="wa8/wa8events.html">Events</a></li>
-                <li><a href="wa7/wa7resources.html">Resources</a></li>
-                <li><a href="wa8/wa8contact.html">Contact</a></li>
+                <li><a href="../wa7.html">Home</a></li>
+                <li><a href="wa8events.html">Events</a></li>
+                <li><a href="../wa7/wa7resources.html">Resources</a></li>
+                <li><a href="wa8contact.html">Contact</a></li>
             </ul>
         </nav>
 
         <main class="main-content"> <!-- Large rectangle for introduction-->
-            <h1>Welcome to the Mahjong Club!</h1>
+            <main class="main-content"> <!-- Large rectangle for introduction-->
+                <div class="calendar-container">
+                    <h1>Calendar</h1>
+                    <div class="iframe-container">
+                        <iframe
+                            src="https://calendar.google.com/calendar/embed?src=c_59036867d743c46c9acbfc1e8992368b60e744ff06380ca3fd29b03f71089e66%40group.calendar.google.com&ctz=America%2FDenver"
+                            style="border: 0" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+            </main>
 
-            <p>We are the CU Mahjong club gather just to play our favorite game! We are always looking for new members
-                to teach and play with. Our meeting times and locations can alternate, so check out the calendar to
-                learn about the details of our specific meetings!</p>
-            <p><strong>Where:</strong> CASE Building (check calendar for specific room)</p>
-            <p><strong>When:</strong> Mondays and Thursdays around 5:00 PM (check calendar for specific times)</p>
-            <p></p>
+            <p><strong>Check this page often for our meetings since they can change if we can't reserve a room to host
+                    in.</strong></p>
         </main>
 
         <aside class="sidebar"> <!--Sidebar for a gallery-->
-            <div class="gallery-header">
-                <h2>Gallery</h2>
-                <p>(click on an image to enlarge)</p>
-                <div class="gallery-grid">
-                    <img src="wa6/Mahjong_converted.avif" loading="lazy" alt="Picture of Mahjong Sets" class="gallery-thumb">
-                    <img src="wa6/Mahjong1_converted.avif" loading="lazy" alt="Picture of Mahjong Wall" class="gallery-thumb">
-                    <img src="wa6/Mahjong2_converted.avif" loading="lazy" alt="Picture of center Mahjong pile" class="gallery-thumb">
-                    <img src="wa6/Mahjong3_converted.avif" loading="lazy" alt="Picture of Mahjong tile shuffle"
-                        class="gallery-thumb">
-                </div>
-            </div>
+            <h2>Events List (Fall 2025):</h2>
 
+            <h3>General Meetings:</h3>
+            <li><strong>Upcoming Meeting: </strong>October 20.....CASE E380.....4:30-7:00PM</ul>
+            <li>October 27.....CASE E380.....4:30-7:00PM</li>
+            <li>November 3.....CASE E380.....4:30-7:00PM</li>
+            <li>November 10.....CASE E380.....4:30-7:00PM</li>
+
+            <h3>Special Events:</h3>
+            <li>None</li>
         </aside>
 
         <div id="lightbox" class="lightbox"> <!--Makes the pictures expand when you press on them.-->
