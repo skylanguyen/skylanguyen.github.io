@@ -62,7 +62,6 @@ html{
     .main-nav{
         display: flex;
         justify-content: space-between;
-        align-items: center;
         padding: 0.5rem 1rem;
     }
 
@@ -350,7 +349,7 @@ footer{
     padding: 1rem;
 }
 
-nav-menu {
+.nav-menu {
      font-size: clamp(1rem, 2vw, 2rem);
  }
 
