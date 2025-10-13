@@ -6,8 +6,8 @@ html{
 
 .page-container{
     display:grid;
-    grid-template-areas:"nav nav" "main sidebar" "privacy sidebar";
-    grid-template-columns: 2fr 1fr;
+    grid-template-areas:"nav nav" "sidebar main" "privacy sidebar";
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: auto 1fr;
     gap: 2rem;
     padding: 1rem;
@@ -55,7 +55,7 @@ html{
 
 @media screen and (max-width: 768px){
     .page-container{
-        grid-template-areas: "nav" "main" "sidebar";
+        grid-template-areas: "nav" "sidebar" "main";
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
     }
