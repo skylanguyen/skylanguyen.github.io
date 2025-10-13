@@ -44,6 +44,7 @@ html{
     align-self: center;
     margin:0rem;
     border: 10px;
+    font-size:clamp(1rem,2vw,2rem);
 }
 
 
