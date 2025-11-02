@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "comma-sans", sans-serif;
+    background-color: #f3e7f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Header */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #34495e;
+    margin: 20px 0 10px 0;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Search Section */
+#search {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #2980b9;
+}
+
+/* Buttons */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2a83be;
+}
+
+button:active {
+    background-color: #19537a;
+}
+
+/* Error Message */
+#error {
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 10px 0;
+    min-height: 20px;
+}
+
+/* Movie Cards */
+#results>div,
+#favorites>div {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#results>div:hover,
+#favorites>div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Images */
+img {
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 40px 0;
+}
+
+/* Count Badge */
+#count {
+    background-color: #e73cc5;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* Favorites Section */
+#favorites p {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Remove button styling */
+#favorites button {
+    background-color: red;
+}
+
+#favorites button:hover {
+    background-color: maroon;
+}
+
+/* Export button styling */
+button[onclick="exportFav()"] {
+    background-color: teal;
+}
+
+button[onclick="exportFav()"]:hover {
+    background-color: forestgreen;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}

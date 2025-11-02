@@ -1,0 +1,37 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="wa11.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lxq7nkm.css">
+</head>
+
+<body>
+    <h1> Movie Search</h1>
+    <input type="text" id="search" placeholder="Enter movie title">
+    <button onclick="search()">Search</button>
+
+    <p id="error">
+
+    </p>
+    <div id="results"></div>
+    <hr>
+    <h2>Favorites (<span id="count">0</span>)</h2>
+    <button onclick="exportFav()">Export</button>
+    <button onclick = "clearFavs()"> Clear All</button>
+    <div id="favorites"></div>
+
+
+
+
+
+
+
+    <script src="wa11.js"></script>
+</body>
+
+</html>
