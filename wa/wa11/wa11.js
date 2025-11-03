@@ -1,5 +1,18 @@
 let favs = [];
 
+
+function loadFavs(){
+    const saved = localStorage.getItem('favorites');
+    if(saved){
+        favs = JSON.parse(saved);
+        showFavs();
+    }
+}
+
+function saveFavs(){
+    localStorage.setItem('favorites', JSON.stringify(favs));
+}
+
 async function search() {
     const query = document.getElementById('search').value;
     if (!query) return;
@@ -38,6 +51,7 @@ function showMovies(movies) {
 function add(movie) {
     if (!favs.find(f => f.imdbID == movie.imdbID)) {
         favs.push(movie);
+        saveFavs();
         showFavs();
         alert(`"${movie.Title}" added to favorites!`);
     }
@@ -45,6 +59,7 @@ function add(movie) {
 
 function remove(id){
     favs = favs.filter(f => f.imdbID !==id);
+    saveFavs();
     showFavs();
 }
 
@@ -87,6 +102,9 @@ document.getElementById('search').addEventListener('keydown', e => {
 function clearFavs(){
     if(confirm('Delete all favorites?')){
         favs =[];
+        saveFavs();
         showFavs();
     }
 }
+
+loadFavs();
