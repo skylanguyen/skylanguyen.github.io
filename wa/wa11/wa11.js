@@ -39,6 +39,7 @@ function add(movie) {
     if (!favs.find(f => f.imdbID == movie.imdbID)) {
         favs.push(movie);
         showFavs();
+        alert(`"${movie.Title}" added to favorites!`);
     }
 }
 
