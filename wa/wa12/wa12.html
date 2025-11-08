@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Search</title>
+    <link rel="stylesheet" href="wa12.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lxq7nkm.css">
+</head>
+
+<body>
+    <header>
+        <h1> Amazon Product Search</h1>
+    </header>
+
+    <main>
+        <section aria-labelledby="search-heading">
+            <h2 id="search-heading" style="display:none">Search for Products</h2>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search for products">
+                <button onclick="search()" aria-label="Search for products">Search</button>
+                <p id="result-count"></p>
+            </div>
+            <p id="error"></p>
+
+            <div id="results"></div>
+        </section>
+
+        <section aria-labelledby="favorites-heading">
+            <h2 id="favorites-heading">Favorites (<span id="count">0</span>)</h2>
+            <div class="favorite-buttons">
+                <button class="export-btn" onclick="exportFav()"
+                    aria-label="Export Favorites list to JSON">Export</button>
+                <button onclick="clearFavs()" aria-label="Clear Favorites list"> Clear All</button>
+                <div id="favorites"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="wa12.js"></script>
+</body>
+
+</html>
