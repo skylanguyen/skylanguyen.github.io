@@ -119,7 +119,7 @@ function remove(index) {
     favs.splice(index, 1);
     saveFavs();
     showFavs();
-    alert('"${product.product_title}" removed from favorites');
+    alert(`"${product.product_title}" removed from favorites`);
 }
 
 function showFavs() {
