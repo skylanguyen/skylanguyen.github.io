@@ -190,31 +190,26 @@ button.export-btn:hover {
     border-radius: 8px;
     padding: 20px;
     margin: 0;
-    /* Remove margin since grid handles spacing */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
-    /* Stack vertically for grid */
     gap: 15px;
 }
 
 .product-image {
     width: 100%;
     max-width: 200px;
-    /* Smaller images for 6 columns */
     height: 200px;
     margin: 0 auto;
 }
 
 
-/* Responsive grid */
 @media (max-width: 900px) {
 
     #results,
     #favorites {
         grid-template-columns: 1fr;
-        /* Single column on smaller screens */
     }
 }
 
