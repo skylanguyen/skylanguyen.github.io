@@ -116,10 +116,11 @@ function add(product) {
 }
 
 function remove(index) {
+    const removed = favs[index];
     favs.splice(index, 1);
     saveFavs();
     showFavs();
-    alert(`"${product.product_title}" removed from favorites`);
+    alert(`"${removed.product_title}" removed from favorites`);
 }
 
 function showFavs() {
@@ -174,6 +175,7 @@ function clearFavs() {
         favs = [];
         saveFavs();
         showFavs();
+        alert('All favorites cleared');
     }
 }
 
