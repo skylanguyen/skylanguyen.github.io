@@ -46,8 +46,8 @@ async function search() {
 
         if (data.data && data.data.products && data.data.products.length > 0) {
             // Limit to 24 products
-            let products = shuffleArray(data.data.products.slice()); // copy & shuffle
-            products = products.slice(0, 24); // pick any 24
+            let products = shuffleArray(data.data.products.slice()); 
+            products = products.slice(0, 24); 
 
             const total = data.data.products.length;
 
@@ -101,6 +101,7 @@ function add(product) {
         favs.push(product);
         saveFavs();
         showFavs();
+        alert(`"${product.product_title}" added to favorites!`);
 
         const errorEl = document.getElementById('error');
         errorEl.className = 'success-message';
@@ -118,6 +119,7 @@ function remove(index) {
     favs.splice(index, 1);
     saveFavs();
     showFavs();
+    alert('"${product.product_title}" removed from favorites');
 }
 
 function showFavs() {
@@ -164,6 +166,7 @@ function exportFav() {
     a.download = 'amazon-favorites.json';
     a.click();
     URL.revokeObjectURL(url);
+    alert('Favorites exported as amazon-favorites.json');
 }
 
 function clearFavs() {

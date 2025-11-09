@@ -173,7 +173,7 @@ button.export-btn:hover {
     }
 }
 
-/* Grid layout for results and favorites */
+/* Grid layout */
 #results,
 #favorites {
     display: grid;
@@ -183,7 +183,7 @@ button.export-btn:hover {
 
 
 
-/* Adjust product cards for grid */
+/* Adjust product cards */
 .product-card {
     background-color: white;
     border: 1px solid #ddd;
