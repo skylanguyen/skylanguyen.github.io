@@ -103,7 +103,7 @@ function showProducts(products) {
 
         html += `
             <div class="product-card">
-            ${showBadge ? '<span class="best-choice-badge">Highest Rated & Best Priced</span>' : ''}
+            ${showBadge ? '<span class="best-choice-badge" onclick="showBadgeInfo(event)">Highest Rated & Best Priced</span>' : ''}
                 <div class="product-image">
                     ${image ? `<img src="${image}" alt="${title}">` : '<div style="width:150px;height:150px;background:#eee;display:flex;align-items:center;justify-content:center;">No Image</div>'}
                 </div>
@@ -297,6 +297,14 @@ function applySorting() {
 function saveLastSearch(query, results, totalResults) {
     lastSearch = { query, results, totalResults };
     localStorage.setItem('amazonLastSearch', JSON.stringify(lastSearch));
+}
+
+function showBadgeInfo(event) {
+    event.stopPropagation();
+    alert('Highest Rated & Best Priced\n\n' +
+          '✓ Rating: 4.0+ stars AND above average rating for this search\n' +
+          '✓ Price: At or below the average price for this search\n\n' +
+          'This badge helps you identify products that offer the best combination of quality and value.');
 }
 
 loadFavs();

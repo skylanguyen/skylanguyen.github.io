@@ -5,238 +5,298 @@
 }
 
 body {
-    font-family: "comma-sans", sans-serif;
-    background-color: #f3e7f9;
-    color: #333;
-    padding: 20px;
-    line-height: 1.6;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    background-color: #eaeded;
+    color: #0F1111;
+    padding: 0;
+    line-height: 1.5;
 }
 
 h1 {
-    color: #0c1b51;
+    color: #0F1111;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 h2 {
-    color: #34495e;
-    margin: 20px 0 10px 0;
+    color: #0F1111;
+    margin: 20px 0 15px 0;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 h3 {
-    color: #0c1b51;
-    margin-bottom: 10px;
-    font-size: 16px;
+    color: #0F1111;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
+/* Header section */
 .search-container {
-    max-width: 600px;
-    margin: 0 auto 20px;
+    background-color: #131921;
+    padding: 15px 20px;
+    margin: 0 0 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
 
 #search {
     flex: 1;
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #0c1b51;
-    border-radius: 5px;
-    min-width: 250px;
+    max-width: 600px;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: white;
 }
 
 #search:focus {
-    outline: none;
-    border-color: #19537a;
+    outline: 2px solid #febd69;
+    outline-offset: -2px;
 }
 
+.search-container button {
+    background-color: #febd69;
+    color: #0F1111;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin: 0;
+}
+
+.search-container button:hover {
+    background-color: #f3a847;
+}
 
 button {
-    background-color: #0c1b51;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
+    background-color: #FFD814;
+    color: #0F1111;
+    padding: 8px 16px;
+    font-size: 13px;
+    border: 1px solid #FCD200;
+    border-radius: 8px;
     cursor: pointer;
     margin: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(213,217,217,.5);
 }
 
 button:hover {
-    background-color: #324792;
+    background-color: #F7CA00;
+    border-color: #F2C200;
 }
 
 button:active {
-    background-color: #19537a;
+    background-color: #F0B800;
+    box-shadow: 0 1px 3px rgba(213,217,217,.5);
 }
 
 button:disabled {
-    background-color: #95a5a6;
+    background-color: #F7F8F8;
+    color: #565959;
     cursor: not-allowed;
+    border-color: #D5D9D9;
 }
 
 #error {
-    color: #e74c3c;
-    font-weight: bold;
+    color: #C7511F;
+    font-weight: 400;
     margin: 10px 0;
     min-height: 20px;
     text-align: center;
+    font-size: 14px;
 }
 
 .success-message {
-    color: #27ae60;
-    font-weight: bold;
+    color: #067D62;
+    font-weight: 600;
     margin: 10px 0;
     text-align: center;
+    font-size: 14px;
 }
 
+/* Product cards */
+.product-card {
+    background-color: white;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 0;
+    box-shadow: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
 
 .product-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    transform: translateY(-2px);
 }
 
 .product-image {
-    flex-shrink: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.product-image:hover {
+    opacity: 0.85;
 }
 
 .product-image img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 5px;
 }
 
 .product-info {
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .product-price {
-    color: #27ae60;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0;
+    color: #0F1111;
+    font-size: 21px;
+    font-weight: 400;
+    margin: 5px 0;
 }
 
+
+
 .product-rating {
-    color: #f39c12;
+    color: #FFA41C;
     margin: 5px 0;
+    font-size: 14px;
+}
+
+.product-card button {
+    background-color: #FFD814;
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.product-card button:hover {
+    background-color: #F7CA00;
 }
 
 hr {
     border: none;
-    border-top: 2px solid #ddd;
-    margin: 40px 0;
+    border-top: 1px solid #D5D9D9;
+    margin: 30px 20px;
 }
 
 #count {
-    background-color: #e73cc5;
+    background-color: #C45500;
     color: white;
     padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: bold;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 #favorites .product-card button {
-    background-color: #e74c3c;
+    background-color: #FFA41C;
+    border-color: #FF8F00;
 }
 
 #favorites .product-card button:hover {
-    background-color: #c0392b;
+    background-color: #FA8900;
 }
 
 button.export-btn {
-    background-color: #187663;
+    background-color: #232F3E;
+    color: white;
+    border-color: #1F2833;
 }
 
 button.export-btn:hover {
-    background-color: #15ab8d;
-}
-
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    .product-card {
-        flex-direction: column;
-    }
-
-    .product-image img {
-        width: 100%;
-        max-width: 200px;
-    }
+    background-color: #37475A;
 }
 
 /* Grid layout */
 #results,
 #favorites {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-
-
-/* Adjust product cards */
-.product-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.product-image {
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 0 20px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
-
 @media (max-width: 900px) {
-
     #results,
     #favorites {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px;
     }
 }
 
+@media (max-width: 600px) {
+    #results,
+    #favorites {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .product-card {
+        padding: 12px;
+    }
+}
 
 .result-count {
     text-align: center;
     margin-bottom: 15px;
-    font-weight: bold;
-    color:#2c3e50
+    font-weight: 400;
+    color: #565959;
+    font-size: 14px;
+}
+
+.favorites-buttons {
+    text-align: center;
+    margin: 20px 0;
 }
 
 .favorites-buttons button {
-    margin-right: 10px;
+    margin: 5px;
 }
 
-#search:focus {
-    outline: none;
-    border-color: #19537a;
-}
-
+/* Filters */
 .filters-container {
-    max-width: 400px;
+    max-width: 1500px;
     margin: 20px auto;
     padding: 15px 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #D5D9D9;
     display: flex;
     gap: 15px;
     align-items: center;
@@ -244,77 +304,61 @@ button.export-btn:hover {
 }
 
 .filters-container label {
-    font-size: 16px;
-    color: #34495e;
-    font-weight: 600;
+    font-size: 14px;
+    color: #0F1111;
+    font-weight: 700;
 }
 
 .filters-container select {
-    padding: 10px 15px;
-    font-size: 15px;
-    border: 2px solid #0c1b51;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-    min-width: 180px;
-}
-
-.filters-container select:focus {
-    outline: none;
-    border-color: #19537a;
-}
-
-#result-count {
-    text-align: center;
-    margin: 15px 0;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-#search:focus {
-    outline: none;
-    border-color: #19537a;
-}
-
-.filters-container {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 15px 20px;
-    background-color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #888C8C;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-}
-
-.filters-container label {
-    font-size: 16px;
-    color: #34495e;
-    font-weight: 600;
-}
-
-.filters-container select {
-    padding: 10px 15px;
-    font-size: 15px;
-    border: 2px solid #0c1b51;
-    border-radius: 5px;
-    background-color: white;
+    background-color: #F0F2F2;
     cursor: pointer;
     min-width: 180px;
+    color: #0F1111;
+}
+
+.filters-container select:hover {
+    background-color: #E3E6E6;
 }
 
 .filters-container select:focus {
-    outline: none;
-    border-color: #19537a;
+    outline: 2px solid #007185;
+    outline-offset: 2px;
+    border-color: #007185;
 }
 
 #result-count {
     text-align: center;
     margin: 15px 0;
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 400;
+    color: #565959;
+    font-size: 14px;
+}
+
+/* Badge styling */
+.best-choice-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #C45500;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 10;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.best-choice-badge:hover {
+    background-color: #A34400;
+    transform: scale(1.05);
 }
 
 /* Lightbox styles */
@@ -362,8 +406,8 @@ button.export-btn:hover {
 .lightbox-content p {
     color: white;
     margin-top: 15px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .lightbox-close {
@@ -379,14 +423,5 @@ button.export-btn:hover {
 }
 
 .lightbox-close:hover {
-    color: #f39c12;
-}
-
-.product-image {
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-
-.product-image:hover {
-    opacity: 0.8;
+    color: #febd69;
 }
