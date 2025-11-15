@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "comma-sans", sans-serif;
+    background-color: #f3e7f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #0c1b51;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #34495e;
+    margin: 20px 0 10px 0;
+}
+
+h3 {
+    color: #0c1b51;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#search {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #0c1b51;
+    border-radius: 5px;
+    min-width: 250px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #19537a;
+}
+
+
+button {
+    background-color: #0c1b51;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #324792;
+}
+
+button:active {
+    background-color: #19537a;
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+#error {
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 10px 0;
+    min-height: 20px;
+    text-align: center;
+}
+
+.success-message {
+    color: #27ae60;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    flex-shrink: 0;
+}
+
+.product-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.product-info {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.product-price {
+    color: #27ae60;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-rating {
+    color: #f39c12;
+    margin: 5px 0;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 40px 0;
+}
+
+#count {
+    background-color: #e73cc5;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+#favorites .product-card button {
+    background-color: #e74c3c;
+}
+
+#favorites .product-card button:hover {
+    background-color: #c0392b;
+}
+
+button.export-btn {
+    background-color: #187663;
+}
+
+button.export-btn:hover {
+    background-color: #15ab8d;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .product-card {
+        flex-direction: column;
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Grid layout */
+#results,
+#favorites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+
+
+/* Adjust product cards */
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 900px) {
+
+    #results,
+    #favorites {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.result-count {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color:#2c3e50
+}
+
+.favorites-buttons button {
+    margin-right: 10px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #19537a;
+}
+
+.filters-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters-container label {
+    font-size: 16px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+.filters-container select {
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 2px solid #0c1b51;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.filters-container select:focus {
+    outline: none;
+    border-color: #19537a;
+}
+
+#result-count {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #19537a;
+}
+
+.filters-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters-container label {
+    font-size: 16px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+.filters-container select {
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 2px solid #0c1b51;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.filters-container select:focus {
+    outline: none;
+    border-color: #19537a;
+}
+
+#result-count {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.lightbox.active {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-content p {
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #f39c12;
+}
+
+.product-image {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.product-image:hover {
+    opacity: 0.8;
+}
