@@ -105,13 +105,14 @@ function showProducts(products) {
             <div class="product-card">
             ${showBadge ? '<span class="best-choice-badge" onclick="showBadgeInfo(event)">Highest Rated & Best Priced</span>' : ''}
                 <div class="product-image">
-                    ${image ? `<img src="${image}" alt="${title}">` : '<div style="width:150px;height:150px;background:#eee;display:flex;align-items:center;justify-content:center;">No Image</div>'}
+                ${image ? `<img src="${image}" alt="${title}">` : '<div class="no-image-placeholder">No Image</div>'}
+
                 </div>
                 <div class="product-info">
                     <h3>${title}</h3>
                     <div class="product-price">${price}</div>
                     <div class="product-rating">⭐ ${rating}</div>
-                    <button onclick='add(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Add to Favorites</button>
+                    <button onclick='add(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Add to Cart</button>
                 </div>
             </div>
         `;
@@ -125,17 +126,17 @@ function add(product) {
         favs.push(product);
         saveFavs();
         showFavs();
-        alert(`"${product.product_title}" added to favorites!`);
+        alert(`"${product.product_title}" added to cart!`);
 
         const errorEl = document.getElementById('error');
         errorEl.className = 'success-message';
-        errorEl.textContent = `"${product.product_title}" added to favorites!`;
+        errorEl.textContent = `"${product.product_title}" added to cart!`;
         setTimeout(() => {
             errorEl.className = '';
             errorEl.textContent = '';
         }, 2000);
     } else {
-        document.getElementById('error').textContent = 'Already in favorites!';
+        document.getElementById('error').textContent = 'Already in cart!';
     }
 }
 
@@ -144,14 +145,14 @@ function remove(index) {
     favs.splice(index, 1);
     saveFavs();
     showFavs();
-    alert(`"${removed.product_title}" removed from favorites`);
+    alert(`"${removed.product_title}" removed from cart`);
 }
 
 function showFavs() {
     document.getElementById('count').textContent = favs.length;
 
     if (favs.length === 0) {
-        document.getElementById('favorites').innerHTML = '<p style="color:#7f8c8d;font-style:italic;">No favorites yet</p>';
+        document.getElementById('cart').innerHTML = '<p class="empty-cart-message">No items in cart</p>';
         return;
     }
 
@@ -165,7 +166,8 @@ function showFavs() {
         html += `
             <div class="product-card">
                 <div class="product-image">
-                    ${image ? `<img src="${image}" alt="${title}">` : '<div style="width:150px;height:150px;background:#eee;">No Image</div>'}
+                      ${image ? `<img src="${image}" alt="${title}">` : '<div class="no-image-placeholder">No Image</div>'}
+
                 </div>
                 <div class="product-info">
                     <h3>${title}</h3>
@@ -176,30 +178,30 @@ function showFavs() {
             </div>
         `;
     });
-    document.getElementById('favorites').innerHTML = html;
+    document.getElementById('cart').innerHTML = html;
 }
 
 function exportFav() {
     if (favs.length === 0) {
-        alert('No favorites to export');
+        alert('No cart items to export');
         return;
     }
     const blob = new Blob([JSON.stringify(favs, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'amazon-favorites.json';
+    a.download = 'amazon-cart.json';
     a.click();
     URL.revokeObjectURL(url);
-    alert('Favorites exported as amazon-favorites.json');
+    alert('Cart exported as amazon-cart.json');
 }
 
 function clearFavs() {
-    if (confirm('Delete all favorites?')) {
+    if (confirm('Delete all cart items?')) {
         favs = [];
         saveFavs();
         showFavs();
-        alert('All favorites cleared');
+        alert('Cart cleared');
     }
 }
 
@@ -302,9 +304,9 @@ function saveLastSearch(query, results, totalResults) {
 function showBadgeInfo(event) {
     event.stopPropagation();
     alert('Highest Rated & Best Priced\n\n' +
-          '✓ Rating: 4.0+ stars AND above average rating for this search\n' +
-          '✓ Price: At or below the average price for this search\n\n' +
-          'This badge helps you identify products that offer the best combination of quality and value.');
+        '✓ Rating: 4.0+ stars AND above average rating for this search\n' +
+        '✓ Price: At or below the average price for this search\n\n' +
+        'This badge helps you identify products that offer the best combination of quality and value.');
 }
 
 loadFavs();

@@ -425,3 +425,18 @@ button.export-btn:hover {
 .lightbox-close:hover {
     color: #febd69;
 }
+
+.empty-cart-message {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* No image placeholder */
+.no-image-placeholder {
+    width: 150px;
+    height: 150px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
